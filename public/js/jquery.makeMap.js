@@ -20,21 +20,11 @@ jQuery(document).ready(function () {
             myCode = code
             myRegion = region
             getData(myCode, myRegion)
-            // fetch('country?code=' + code).then((response) => {
-            //     response.json().then((data) => {
-            //         if (mode == 'track') {
-            //             message.textContent = `${region}:\r\n${data.topSong}`
-            //         } else if (mode == 'artist') {
-            //             message.textContent = `${region}:\r\n${data.topArtist}`
-            //         }
-            //     })
-            // })
         },
     })
 })
 
 function getData(code, region) {
-
     fetch('country?code=' + code).then((response) => {
         response.json().then((data) => {
             if (mode == 'track') {
