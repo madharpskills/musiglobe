@@ -1,7 +1,7 @@
 const message = document.querySelector('#message')
 
-jQuery(document).ready(function() {
-    jQuery('#vmap').vectorMap({ 
+jQuery(document).ready(function () {
+    jQuery('#vmap').vectorMap({
         map: 'world_en',
         backgroundColor: '#0B3861',
         color: '#81BEF7',
@@ -9,7 +9,7 @@ jQuery(document).ready(function() {
         enableZoom: true,
         showTooltip: true,
         scaleColors: ['#C8EEFF', '#006491'],
-        onRegionOver: function (event, code, region) {
+        onRegionClick: function (event, code, region) {
             fetch('country?code=' + code).then((response) => {
                 response.json().then((data) => {
                     console.log(code, data.topSong)
