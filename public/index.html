@@ -4,83 +4,13 @@
   <title>Musiglobe</title>
   <link rel="icon" href="/img/Music.png">
   <link rel="stylesheet" href="/styles/jqvmap.css" media="screen" type="text/css">
-  <style>
-    html,
-    body {
-      padding: 0;
-      margin: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    #vmap {
-      width: 100%;
-      height: 100%;
-      background-color: rgb(0, 0, 0);
-      position: relative;
-    }
-
-    #message {
-      position: absolute;
-      z-index: 2;
-      left: 0;
-      bottom: 0;
-
-      font-size: 20pt;
-      font-family: sans-serif;
-      background-color: #02eeffc7;
-
-      margin: 20px;
-      padding: 20px;
-      border-style: solid;
-      border-width: 10px;
-      border-color: black;
-    }
-
-    #topTrack {
-      position: absolute;
-      z-index: 2;
-      left: 0;
-      bottom: 16%;
-
-      height: 30px;
-      width: 90px;
-      font-size: 12pt;
-
-      margin: 20px;
-      border-style: solid;
-      border-color: black;
-      border-width: 4px;
-
-      font-family: sans-serif;
-      background-color: #02eeffc7;
-    }
-
-    #topArtist {
-      position: absolute;
-      z-index: 2;
-      left: 0;
-      bottom: 12%;
-
-      height: 30px;
-      width: 90px;
-      font-size: 12pt;
-
-      margin: 20px;
-      border-style: solid;
-      border-color: black;
-      border-width: 4px;
-
-      font-family: sans-serif;
-      background-color: #02eeffc7;
-    }
-  </style>
+  <link rel="stylesheet" href="/styles/styles.css" media="screen" type="text/css">
 </head>
 
 <body>
   <div id="vmap"></div>
-  <button autofocus id="topTrack" value="track" onclick=selectArtistOrTrack(value)>Top Track</button>
-  <button id="topArtist" value="artist" onclick=selectArtistOrTrack(value)>Top Artist</button>
+  <button autofocus id="topTrack" class="button" value="track" onclick=selectArtistOrTrack(value)>Top Track</button>
+  <button id="topArtist" class="button" value="artist" onclick=selectArtistOrTrack(value)>Top Artist</button>
 
   <p id="message"></p>
 

@@ -9,6 +9,7 @@ jQuery(document).ready(function () {
         enableZoom: true,
         showTooltip: true,
         scaleColors: ['#C8EEFF', '#006491'],
+        selectedColor: '#0080FF',
         onRegionClick: function (event, code, region) {
             fetch('country?code=' + code).then((response) => {
                 response.json().then((data) => {
