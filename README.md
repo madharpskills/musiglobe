@@ -5,41 +5,41 @@ Visualizing geographical music data
 
 ## Getting Started 
 
-These instructions will get you a copy of the project up and running on your local machine
+These instructions will get you a copy of the project up and running on your local machine.
 
 ### Prerequisites
 
-You will need Node, and npm installed on your machine.  You can check if they are installed with the following commands. 
+You will need Node and npm installed on your machine.  You can check if they are installed with the following commands. 
 
 ```
-npm -v
+    npm -v
 ```
 ```
-node -v
+    node -v
 ```
 If you do not have node and npm installed - https://www.npmjs.com/get-npm
 
 ### Installing
 
-Clone the repo
+* Clone the repo
 
 ```
-Git clone https://github.com/madharpskills/musiglobe.git
+    git clone https://github.com/madharpskills/musiglobe.git
 ```
 
-Install dependencies
+* Install dependencies
 
 ```
-npm install
+    npm install
 ```
 
-## Run locally
+## Run Locally
 
-* To startup app run:
+* To start the app, run:
 ```
     npm run start
 ```
-* Go to localhost:3000 in your favorite browser to see a world of music!
+* Go to localhost:3000 in your favorite browser to see a world of music data!
 
 
 ## Built With 👷
@@ -48,7 +48,7 @@ npm install
 * [LastFM](https://www.last.fm/api/intro) - A music service that learns what you love
 
 
-## Authors
+## Authors ✏️
 
 * Deborah Richins 🍜 
 * Chris Dixon 🐼
