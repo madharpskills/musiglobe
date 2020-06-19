@@ -1,6 +1,6 @@
 const express = require('express')
 const path = require('path')
-const { getSongData } = require('./utils/displayMusicData')
+const { getSongData, getArtistData } = require('./utils/displayMusicData')
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -12,8 +12,9 @@ app.get('/', (req, res) => {
 })
 
 app.get('/country', (req, res) => {
-    let data = getSongData(req.query.code)
-    res.send({ topSong: data })
+    let song = getSongData(req.query.code)
+    let artist = getArtistData(req.query.code)
+    res.send({ topSong: song, topArtist: artist})
 })
 
 app.listen(port, () => {

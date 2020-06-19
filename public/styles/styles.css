@@ -23,6 +23,7 @@ html,
       font-family: sans-serif;
       color: #ffffffc7;
       background-color: #5e5e5ec7;
+      white-space: pre;
 
       margin: 20px;
       padding: 20px;
@@ -50,12 +51,12 @@ html,
       position: absolute;
       z-index: 2;
       left: 0;
-      bottom: 140px;
+      bottom: 170px;
     }
 
     #topArtist {
       position: absolute;
       z-index: 2;
       left: 0;
-      bottom: 100px;
+      bottom: 130px;
     }
