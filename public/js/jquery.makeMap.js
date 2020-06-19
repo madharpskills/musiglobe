@@ -19,3 +19,7 @@ jQuery(document).ready(function () {
         },
     })
 })
+
+function selectArtistOrTrack(v) {
+    console.log("It's-a-me Mario!" + v)
+}

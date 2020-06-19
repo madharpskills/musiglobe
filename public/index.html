@@ -36,17 +36,60 @@
       border-width: 10px;
       border-color: black;
     }
+
+    #topTrack {
+      position: absolute;
+      z-index: 2;
+      left: 0;
+      bottom: 16%;
+
+      height: 30px;
+      width: 90px;
+      font-size: 12pt;
+
+      margin: 20px;
+      border-style: solid;
+      border-color: black;
+      border-width: 4px;
+
+      font-family: sans-serif;
+      background-color: #02eeffc7;
+    }
+
+    #topArtist {
+      position: absolute;
+      z-index: 2;
+      left: 0;
+      bottom: 12%;
+
+      height: 30px;
+      width: 90px;
+      font-size: 12pt;
+
+      margin: 20px;
+      border-style: solid;
+      border-color: black;
+      border-width: 4px;
+
+      font-family: sans-serif;
+      background-color: #02eeffc7;
+    }
   </style>
 </head>
 
 <body>
   <div id="vmap"></div>
+  <button autofocus id="topTrack" value="track" onclick=selectArtistOrTrack(value)>Top Track</button>
+  <button id="topArtist" value="artist" onclick=selectArtistOrTrack(value)>Top Artist</button>
 
   <p id="message"></p>
 
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
   <script type="text/javascript" src="/js/jquery.vmap.js"></script>
   <script type="text/javascript" src="/js/jquery.vmap.world.js" charset="utf-8"></script>
+
+  <!-- <script type="text/javascript" src="/js/displayMusicData.js"></script> -->
+  <script>var countries = { "af": { "name": "Afghanistan", "song": { "title": "Wonderwall", "artist": "Oasis" }, "artist": "The xx" } }</script>
 
   <script type="text/javascript" src="/js/jquery.makeMap.js"></script>
 </body>
