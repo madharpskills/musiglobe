@@ -1,6 +1,6 @@
 const express = require('express')
 const path = require('path')
-const { getSongData, getArtistData, getGlobal } = require('./utils/displayMusicData')
+const { getSongData, getArtistData, getSpotifyData } = require('./utils/displayMusicData')
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -12,12 +12,12 @@ app.get('/', (req, res) => {
 })
 
 app.get('/global', async (req, res) => {
-    const data = await getGlobal()
+    const data = await getSpotifyData('global')
     res.send({ globalData: data[1] })
 })
 
-app.get('/country', (req, res) => {
-    let song = getSongData(req.query.code)
+app.get('/country', async (req, res) => {
+    let song = await getSongData(req.query.code)
     let artist = getArtistData(req.query.code)
     res.send({ topSong: song, topArtist: artist})
 })
