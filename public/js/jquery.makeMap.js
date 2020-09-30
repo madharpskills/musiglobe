@@ -14,7 +14,7 @@ jQuery(document).ready(function () {
         scaleColors: ['#C8EEFF', '#006491'],
         selectedColor: '#0080FF',
         onLoad: function (event, map) {
-            message.textContent = `Country:\r\n<title>, by <artist>`
+            getGlobalData()
         },
         onRegionClick: function (event, code, region) {
             myCode = code
@@ -23,6 +23,14 @@ jQuery(document).ready(function () {
         },
     })
 })
+
+function getGlobalData() {
+    fetch('global').then((response) => {
+        response.json().then((data) => {
+            message.textContent = `Global:\r\n ${data.globalData.field2}, by ${data.globalData.field3}`
+        })
+    })
+}
 
 function getData(code, region) {
     fetch('country?code=' + code).then((response) => {

@@ -1,6 +1,6 @@
 const express = require('express')
 const path = require('path')
-const { getSongData, getArtistData } = require('./utils/displayMusicData')
+const { getSongData, getArtistData, getGlobal } = require('./utils/displayMusicData')
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -9,6 +9,11 @@ app.use(express.static(path.join(__dirname, '../public')))
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html')
+})
+
+app.get('/global', async (req, res) => {
+    const data = await getGlobal()
+    res.send({ globalData: data[1] })
 })
 
 app.get('/country', (req, res) => {
