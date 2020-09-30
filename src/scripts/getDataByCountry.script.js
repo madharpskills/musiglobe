@@ -1,5 +1,5 @@
-const countryList = require('./country-list.js')
-const { getTopTrack, getTopArtist } = require('./lastfm')
+const countryList = require('../countries/countryList.js')
+const { getTopTrack, getTopArtist } = require('../utils/lastfm')
 const fs = require('fs')
 
 const getCountryData = async () => {
@@ -24,7 +24,7 @@ const getCountryData = async () => {
     let countriesObj = convertMapToObj(countries)
     let countriesJson = JSON.stringify(countriesObj)
 
-    fs.writeFile('countries.json', countriesJson, 'utf8', function (err) {
+    fs.writeFile('../countries/dataByCountry.json', countriesJson, 'utf8', function (err) {
         if (err) {
             console.log("An error has occured writing JSON object to file.")
             return console.log(err)
@@ -50,9 +50,3 @@ const start = async function() {
 }
 
 start()
-
-// getCountryData()
-
-// module.exports = {
-//     getCountryData
-// }

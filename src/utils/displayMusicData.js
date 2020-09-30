@@ -1,4 +1,4 @@
-const countryData = require('./countries.json')
+const countryData = require('../countries/dataByCountry.json')
 const csv = require('csvtojson')
 const request = require('request')
 
