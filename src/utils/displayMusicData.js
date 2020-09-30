@@ -4,16 +4,26 @@ const request = require('request')
 
 const getSongData = async (code) => {
     let spotifyData = await getSpotifyData(code)
-    let data = 'This country doesn\'t listen to music'
+    let data = {
+        text: 'This country doesn\'t listen to music',
+        link: ''
+    }
 
     if (lastfmCountryData[code]) {
-        data = `${lastfmCountryData[code].song.title}, by ${lastfmCountryData[code].song.artist}`
+        data = {
+            text: `${lastfmCountryData[code].song.title}, by ${lastfmCountryData[code].song.artist}`,
+            // TODO: look up link for spotify!
+            link: ''
+        }
     } 
     
     if (spotifyData[1].field1) {
-        data = `${spotifyData[1].field2}, by ${spotifyData[1].field3}`
+        data = { 
+            text: `${spotifyData[1].field2}, by ${spotifyData[1].field3}`,
+            link: spotifyData[1].field5
+        }
     }
-
+    
     return data
 }
 

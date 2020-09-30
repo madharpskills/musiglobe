@@ -1,7 +1,10 @@
 const message = document.querySelector('#message')
+const playa = document.querySelector('#playa')
 let mode = 'track'
 let myCode = ''
 let myRegion = ''
+const spotifyLink = 'https://open.spotify.com/embed/track/'
+let globalLink = ''
 
 jQuery(document).ready(function () {
     jQuery('#vmap').vectorMap({
@@ -27,7 +30,11 @@ jQuery(document).ready(function () {
 function getGlobalData() {
     fetch('global').then((response) => {
         response.json().then((data) => {
-            message.textContent = `Global:\r\n ${data.globalData.field2}, by ${data.globalData.field3}`
+            const text = `${data.globalData.field2}, by ${data.globalData.field3}`
+            message.setAttribute('title', text)
+            message.textContent = `Global:\r\n${text}`
+            globalLink = spotifyLink + data.globalData.field5.split('/')[4]
+            playa.setAttribute('src', globalLink)
         })
     })
 }
@@ -36,10 +43,11 @@ function getData(code, region) {
     fetch('country?code=' + code).then((response) => {
         response.json().then((data) => {
             if (mode == 'track') {
-                message.title = data.topSong
-                message.textContent = `${region}:\r\n${data.topSong}`
+                message.setAttribute('title', data.topSong.text)
+                message.textContent = `${region}:\r\n${data.topSong.text}`
+                playa.setAttribute('src', data.topSong.link ? spotifyLink + data.topSong.link.split('/')[4] : globalLink)
             } else if (mode == 'artist') {
-                message.title = data.topArtist
+                message.setAttribute('title', data.topArtist)
                 message.textContent = `${region}:\r\n${data.topArtist}`
             }
         })
