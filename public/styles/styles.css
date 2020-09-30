@@ -18,8 +18,12 @@ html,
       z-index: 2;
       left: 0;
       bottom: 0;
+      width: 25%;
+      height: 5%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
 
-      font-size: 20pt;
       font-family: sans-serif;
       color: #ffffffc7;
       background-color: #5e5e5ec7;
@@ -30,6 +34,16 @@ html,
       border-style: solid;
       border-width: 10px;
       border-color: black;
+    }
+
+    iframe {
+      position: absolute;
+      z-index: 2;
+      right: 20%;
+      bottom: 0;
+
+      margin: 20px;
+      padding: 20px;
     }
 
     .button {

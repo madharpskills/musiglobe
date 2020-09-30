@@ -36,8 +36,10 @@ function getData(code, region) {
     fetch('country?code=' + code).then((response) => {
         response.json().then((data) => {
             if (mode == 'track') {
+                message.title = data.topSong
                 message.textContent = `${region}:\r\n${data.topSong}`
             } else if (mode == 'artist') {
+                message.title = data.topArtist
                 message.textContent = `${region}:\r\n${data.topArtist}`
             }
         })
