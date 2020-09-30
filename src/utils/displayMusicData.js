@@ -1,4 +1,4 @@
-const countryData = require('../countries/data-by-country.json')
+const countryData = require('../countries/dataByCountry.json')
 
 const getSongData = (code) => {
     let data = `${countryData[code].song.title}, by ${countryData[code].song.artist}`
