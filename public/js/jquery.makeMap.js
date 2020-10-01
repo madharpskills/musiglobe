@@ -50,7 +50,6 @@ function getData(code, region) {
                 if (newLink !== oldLink) {
                     playa.setAttribute('src', newLink)
                 }
-                playa.setAttribute('src', )
             } else if (mode == 'artist') {
                 message.setAttribute('title', data.topArtist)
                 message.textContent = `${region}:\r\n${data.topArtist}`

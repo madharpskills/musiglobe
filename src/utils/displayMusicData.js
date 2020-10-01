@@ -12,7 +12,7 @@ const getSongData = async (code) => {
 
     if (lastfmCountryData[code] && !spotifyData[1].field1) {
         data = {
-            text: `${lastfmCountryData[code].song.title}, by ${lastfmCountryData[code].song.artist}`,
+            text: lastfmCountryData[code].song.title ? `${lastfmCountryData[code].song.title}, by ${lastfmCountryData[code].song.artist}` : 'This country doesn\'t listen to music',
             link: await getSpotifySearchQuery(lastfmCountryData[code].song.title, lastfmCountryData[code].song.artist)
         }
     } 
