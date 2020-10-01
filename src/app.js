@@ -18,13 +18,11 @@ app.get('/', (req, res) => {
 })
 
 app.get('/global', async (req, res) => {
-    console.log('getting global data')
     const data = await getSpotifyData('global')
     res.send({ globalData: data[1] })
 })
 
 app.get('/country', async (req, res) => {
-    console.log(`getting data for ${req.query.code}`)
     try {
         let song = await getSongData(req.query.code)
         let artist = getArtistData(req.query.code)

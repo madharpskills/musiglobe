@@ -28,11 +28,20 @@ const getSpotifyToken = async () => {
 const getSpotifySearchQuery = async (track, artist) => {
     try {
         track = track.replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ");
-        artist = artist.replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ");
-        const res = await axios.get(`https://api.spotify.com/v1/search?q=track:${track}%20artist:${artist}&type=track,artist`, {
+        
+        const res = await axios.get(`https://api.spotify.com/v1/search?q=track:${track}%20artist:${artist}&limit=50&type=track`, {
             headers: { 'Authorization': `Bearer ${await getSpotifyToken()}` }
         })
-        return res.data.tracks.items[0].external_urls.spotify
+
+        for (const track of res.data.tracks.items) {
+            for (const spotifyArtist of track.artists) {
+                if (spotifyArtist.name.toLowerCase() === artist.toLowerCase()) {
+                    return track.external_urls.spotify
+                }
+            }
+        }
+
+        return ''
     } catch (e) {
         console.error(e)
         throw e
