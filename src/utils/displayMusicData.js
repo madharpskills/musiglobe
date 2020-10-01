@@ -1,4 +1,5 @@
 const lastfmCountryData = require('../countries/dataByCountry.json')
+const { getSpotifySearchQuery } = require('./spotify')
 const csv = require('csvtojson')
 const request = require('request')
 
@@ -9,11 +10,10 @@ const getSongData = async (code) => {
         link: ''
     }
 
-    if (lastfmCountryData[code]) {
+    if (lastfmCountryData[code] && !spotifyData[1].field1) {
         data = {
             text: `${lastfmCountryData[code].song.title}, by ${lastfmCountryData[code].song.artist}`,
-            // TODO: look up link for spotify!
-            link: ''
+            link: await getSpotifySearchQuery(lastfmCountryData[code].song.title, lastfmCountryData[code].song.artist)
         }
     } 
     
