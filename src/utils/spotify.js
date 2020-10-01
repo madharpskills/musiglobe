@@ -27,6 +27,8 @@ const getSpotifyToken = async () => {
 
 const getSpotifySearchQuery = async (track, artist) => {
     try {
+        track = track.replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ");
+        artist = artist.replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ");
         const res = await axios.get(`https://api.spotify.com/v1/search?q=track:${track}%20artist:${artist}&type=track,artist`, {
             headers: { 'Authorization': `Bearer ${await getSpotifyToken()}` }
         })

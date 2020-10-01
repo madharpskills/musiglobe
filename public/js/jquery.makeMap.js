@@ -45,7 +45,12 @@ function getData(code, region) {
             if (mode == 'track') {
                 message.setAttribute('title', data.topSong.text)
                 message.textContent = `${region}:\r\n${data.topSong.text}`
-                playa.setAttribute('src', data.topSong.link ? spotifyLink + data.topSong.link.split('/')[4] : globalLink)
+                const oldLink = playa.src
+                const newLink = data.topSong.link ? spotifyLink + data.topSong.link.split('/')[4] : globalLink
+                if (newLink !== oldLink) {
+                    playa.setAttribute('src', newLink)
+                }
+                playa.setAttribute('src', )
             } else if (mode == 'artist') {
                 message.setAttribute('title', data.topArtist)
                 message.textContent = `${region}:\r\n${data.topArtist}`
