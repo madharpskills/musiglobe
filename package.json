@@ -10,6 +10,7 @@
   "author": "Deborah Richins",
   "license": "ISC",
   "dependencies": {
+    "apicache": "^1.5.3",
     "axios": "^0.19.2",
     "csvtojson": "^2.0.10",
     "dotenv": "^8.2.0",
