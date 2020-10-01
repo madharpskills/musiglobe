@@ -1,6 +1,7 @@
 const express = require('express')
 const path = require('path')
 const { getSongData, getArtistData, getSpotifyData } = require('./utils/displayMusicData')
+const dotenv = require('dotenv').config()
 
 const app = express()
 const port = process.env.PORT || 3000
