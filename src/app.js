@@ -9,7 +9,9 @@ const port = process.env.PORT || 3000
 const cache = apicache.middleware
 
 app.use(express.static(path.join(__dirname, '../public')))
-app.use(cache('1 minutes'))
+
+const onlyStatus200 = (req, res) => res.statusCode === 200
+app.use(cache('1 minutes', onlyStatus200))
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html')
@@ -23,9 +25,15 @@ app.get('/global', async (req, res) => {
 
 app.get('/country', async (req, res) => {
     console.log(`getting data for ${req.query.code}`)
-    let song = await getSongData(req.query.code)
-    let artist = getArtistData(req.query.code)
-    res.send({ topSong: song, topArtist: artist})
+    try {
+        let song = await getSongData(req.query.code)
+        let artist = getArtistData(req.query.code)
+        res.send({ topSong: song, topArtist: artist})
+    }
+    catch(e) {
+        console.log(e)
+        res.status(500).send()
+    }
 })
 
 app.listen(port, () => {

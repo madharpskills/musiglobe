@@ -40,7 +40,7 @@ const getSpotifyData = async (code) => {
             return new Promise((resolve, reject) => {
                 resolve(json)
             })
-        }, (error) => console.err(error), () => {})
+        }, (error) => {throw error}, () => {})
 }
 
 module.exports = {

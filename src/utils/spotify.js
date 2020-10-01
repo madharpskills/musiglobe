@@ -35,6 +35,7 @@ const getSpotifySearchQuery = async (track, artist) => {
         return res.data.tracks.items[0].external_urls.spotify
     } catch (e) {
         console.error(e)
+        throw e
     }
 }
 
