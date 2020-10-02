@@ -32,7 +32,8 @@ function getGlobalData() {
         response.json().then((data) => {
             const text = `${data.globalData.field2}, by ${data.globalData.field3}`
             message.setAttribute('title', text)
-            message.innerHTML = `<b>Country:</b> Global<br>${text}`
+            // message.innerHTML = `<b>Country:</b> Global<br>${text}`
+            message.innerHTML = `<b>Country:</b> Global<br><b>Song Title:</b> ${data.globalData.field2}<br><b>Artist:</b> ${data.globalData.field3}`
             globalLink = spotifyLink + data.globalData.field5.split('/')[4]
             playa.setAttribute('src', globalLink)
         })
@@ -44,7 +45,11 @@ function getData(code, region) {
         response.json().then((data) => {
             if (mode == 'track') {
                 message.setAttribute('title', data.topSong.text)
-                message.innerHTML = `<b>Country:</b> ${region}<br>${data.topSong.text}`
+                if (data.topSong.title) {
+                    message.innerHTML = `<b>Country:</b> ${region}<br><b>Song Title:</b> ${data.topSong.title}<br><b>Artist:</b> ${data.topSong.artist}`
+                } else {
+                    message.innerHTML = `<b>Country:</b> ${region}<br><b>Song Title:</b> No track data<br><b>Artist:</b> No artist data`
+                }
                 const oldLink = playa.src
                 const newLink = data.topSong.link ? spotifyLink + data.topSong.link.split('/')[4] : globalLink
                 if (newLink !== oldLink) {
