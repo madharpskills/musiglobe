@@ -1,25 +1,48 @@
+<!doctype html>
 <html>
 
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Musiglobe</title>
   <link rel="icon" href="/img/Music.png">
+  <link rel="stylesheet"
+    href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+    integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
   <link rel="stylesheet" href="/styles/jqvmap.css" media="screen" type="text/css">
   <link rel="stylesheet" href="/styles/styles.css" media="screen" type="text/css">
 </head>
 
 <body>
-  <div id="vmap"></div>
+  <!-- <div class="jumbotron jumbotron-fluid"> -->
+  <div class="container-fluid">
+    <div id="vmap"></div>
+  </div>
+  <!-- </div> -->
+
   <button autofocus id="topTrack" class="button" value="track" onclick=selectArtistOrTrack(value)>Top Track</button>
   <button id="topArtist" class="button" value="artist" onclick=selectArtistOrTrack(value)>Top Artist</button>
 
-  <p id="message"></p> 
-  <iframe id="playa" src="https://open.spotify.com/embed/track/4Oun2ylbjFKMPTiaSbbCih" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+  <p id="message"></p>
+  <iframe id="playa" src="https://open.spotify.com/embed/track/4Oun2ylbjFKMPTiaSbbCih" width="300" height="80"
+    frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
-  <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script> -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
   <script type="text/javascript" src="/js/jquery.vmap.js"></script>
   <script type="text/javascript" src="/js/jquery.vmap.world.js" charset="utf-8"></script>
 
   <script type="text/javascript" src="/js/jquery.makeMap.js"></script>
+
+  <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"
+    integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"
+    integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
+    crossorigin="anonymous"></script>
+  <script>$(document).ready(function () { $('body').bootstrapMaterialDesign(); });</script>
 </body>
 
 </html>
