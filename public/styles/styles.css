@@ -10,44 +10,25 @@ html,
       width: 100vw;
       height: 100vh;
       background-color: rgb(0, 0, 0);
-      /* position: relative; */
     }
 
     #message {
       box-sizing: content-box;
 
-      /* position: absolute; */
       z-index: 2;
       left: 0;
       bottom: 0;
-      width: 25%;
+      width: 100%;
       height: 5%;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-
-      font-family: sans-serif;
-      color: #ffffffc7;
-      background-color: #5e5e5ec7;
-      white-space: pre;
-
-      margin: 20px;
-      padding: 20px;
-      border-style: solid;
-      border-width: 10px;
-      border-color: black;
     }
 
     iframe {
       box-sizing: content-box;
+      width: 100vw;
       
       position: absolute;
       z-index: 2;
-      right: 20%;
       bottom: 0;
-
-      margin: 20px;
-      padding: 20px;
     }
 
     .button {
@@ -63,18 +44,4 @@ html,
       font-family: sans-serif;
       color: #ffffffc7;
       background-color: #5e5e5ec7;
-    }
-
-    #topTrack {
-      /* position: absolute; */
-      z-index: 2;
-      left: 0;
-      bottom: 170px;
-    }
-
-    #topArtist {
-      /* position: absolute; */
-      z-index: 2;
-      left: 0;
-      bottom: 130px;
     }
