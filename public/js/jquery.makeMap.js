@@ -36,6 +36,8 @@ function getGlobalData() {
             message.innerHTML = `<b>Country:</b> Global<br><b>Song Title:</b> ${data.globalData.field2}<br><b>Artist:</b> ${data.globalData.field3}`
             globalLink = spotifyLink + data.globalData.field5.split('/')[4]
             playa.setAttribute('src', globalLink)
+
+            lyrics.innerHTML = `<b>Lyrics:<br></b>${data.lyrics}`
         })
     })
 }
@@ -55,12 +57,23 @@ function getData(code, region) {
                 if (newLink !== oldLink) {
                     playa.setAttribute('src', newLink)
                 }
+
+                lyrics.innerHTML = `<b>Lyrics:<br></b>${data.lyrics}`
             } else if (mode == 'artist') {
                 message.setAttribute('title', data.topArtist)
                 message.textContent = `${region}:\r\n${data.topArtist}`
             }
         })
     })
+}
+
+function toggleLyrics() {
+    var x = document.getElementById("lyrics");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
 }
 
 function selectArtistOrTrack(v) {

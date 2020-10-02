@@ -50,3 +50,7 @@ html,
     #container {
       margin-right: 0;
     }
+
+    #lyrics {
+        display: none
+    }

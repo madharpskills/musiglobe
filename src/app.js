@@ -2,6 +2,7 @@ const express = require('express')
 const path = require('path')
 const apicache = require('apicache')
 const { getSongData, getArtistData, getSpotifyData } = require('./utils/displayMusicData')
+const { getMusixmatchLyrics } = require('./utils/musixmatch')
 const dotenv = require('dotenv').config()
 
 const getDataByCountry = require('./scripts/getDataByCountry.script')
@@ -21,14 +22,16 @@ app.get('/', (req, res) => {
 
 app.get('/global', async (req, res) => {
     const data = await getSpotifyData('global')
-    res.send({ globalData: data[1] })
+    const lyrics = await getMusixmatchLyrics(data[1].field2, data[1].field3)
+    res.send({ globalData: data[1], lyrics })
 })
 
 app.get('/country', async (req, res) => {
     try {
         let song = await getSongData(req.query.code)
         let artist = getArtistData(req.query.code)
-        res.send({ topSong: song, topArtist: artist})
+        let lyrics = await getMusixmatchLyrics(song.title, song.artist)
+        res.send({ topSong: song, topArtist: artist, lyrics })
     }
     catch(e) {
         console.log(e)
