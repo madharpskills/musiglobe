@@ -16,25 +16,29 @@
 <body>
   <!-- <div> -->
   <div id="container" class="row">
-    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+    <nav id="navSidebar" class="col-md-2 d-none d-md-block bg-light sidebar">
       <div class="sidebar-sticky">
         <ul class="nav flex-column">
           <li class="nav-item">
             <a class="nav-link" href="#">
-              <button type="button" autofocus class="btn btn-primary" value="track"
+              <button id="topTrack" type="button" autofocus class="btn btn-primary" value="track"
                 onclick=selectArtistOrTrack(value)>Top Track</button>
-              <button type="button" class="btn btn-primary" value="artist" onclick=selectArtistOrTrack(value)>Top
+              <button id="topArtists" type="button" class="btn btn-primary" value="artist"
+                onclick=selectArtistOrTrack(value)>Top
                 Artist</button>
             </a>
           </li>
           <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
             <p id="message"></p>
           </h6>
-          
           <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
             <button type="button" class="btn btn-primary" onclick="toggleLyrics()">Show lyrics</button>
             <p id="lyrics"></p>
-        </h6>
+          </h6>
+          <div>
+            <iframe id="playa" src="https://open.spotify.com/embed/track/4Oun2ylbjFKMPTiaSbbCih" width="900" height="80"
+              frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+          </div>
       </div>
     </nav>
 
@@ -50,10 +54,6 @@
       </div>
 
       <!-- <h2>Playa</h2> -->
-      <div>
-        <iframe id="playa" src="https://open.spotify.com/embed/track/4Oun2ylbjFKMPTiaSbbCih" width="900" height="80"
-          frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-      </div>
     </main>
   </div>
   <!-- </div> -->
