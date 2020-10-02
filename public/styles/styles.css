@@ -27,12 +27,12 @@ html,
 
     iframe {
       box-sizing: content-box;
-      width: 16.7vw;
+      width: 16.1vw;
       position: absolute;
       z-index: 2;
       bottom: 0;
       right: 0;
-      left: 0;
+      left: 15px;
     }
 
     .button {
