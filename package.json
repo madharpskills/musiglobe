@@ -4,8 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node src/app",
-    "dev": "nodemon src/app.js -e html,css,js"
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js -e html,css,js",
+    "debug": "nodemon --inspect src/app.js -e html,css,js"
   },
   "author": "Deborah Richins",
   "license": "ISC",
