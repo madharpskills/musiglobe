@@ -4,6 +4,8 @@ const apicache = require('apicache')
 const { getSongData, getArtistData, getSpotifyData } = require('./utils/displayMusicData')
 const dotenv = require('dotenv').config()
 
+const getDataByCountry = require('./scripts/getDataByCountry.script')
+
 const app = express()
 const port = process.env.PORT || 3000
 const cache = apicache.middleware
