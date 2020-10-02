@@ -4,46 +4,35 @@ html,
       margin: 0;
       width: 100%;
       height: 100%;
+      background-color: #0b3861;
+      overflow: hidden;
     }
 
     #vmap {
-      width: 100%;
-      height: 100%;
+      width: 80vw;
+      height: 96.2vh;
       background-color: rgb(0, 0, 0);
-      position: relative;
     }
 
     #message {
-      position: absolute;
+      box-sizing: content-box;
+
       z-index: 2;
       left: 0;
       bottom: 0;
-      width: 25%;
+      width: 100%;
       height: 5%;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-
-      font-family: sans-serif;
-      color: #ffffffc7;
-      background-color: #5e5e5ec7;
-      white-space: pre;
-
-      margin: 20px;
-      padding: 20px;
-      border-style: solid;
-      border-width: 10px;
-      border-color: black;
+      color: black !important;
     }
 
     iframe {
+      box-sizing: content-box;
+      width: 16.1vw;
       position: absolute;
       z-index: 2;
-      right: 20%;
       bottom: 0;
-
-      margin: 20px;
-      padding: 20px;
+      right: 0;
+      left: 15px;
     }
 
     .button {
@@ -60,17 +49,16 @@ html,
       color: #ffffffc7;
       background-color: #5e5e5ec7;
     }
-
-    #topTrack {
-      position: absolute;
-      z-index: 2;
-      left: 0;
-      bottom: 170px;
+    
+    #container {
+      margin-right: 0;
     }
 
-    #topArtist {
-      position: absolute;
-      z-index: 2;
-      left: 0;
-      bottom: 130px;
+    #navSidebar {
+      background-color: #81BEF7 !important;
+      border-right: 1px solid black;
+    }
+
+    #lyrics {
+        display: none;
     }

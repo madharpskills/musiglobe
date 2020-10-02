@@ -1,25 +1,78 @@
+<!doctype html>
 <html>
 
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Musiglobe</title>
   <link rel="icon" href="/img/Music.png">
+  <link rel="stylesheet"
+    href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+    integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
   <link rel="stylesheet" href="/styles/jqvmap.css" media="screen" type="text/css">
   <link rel="stylesheet" href="/styles/styles.css" media="screen" type="text/css">
 </head>
 
 <body>
-  <div id="vmap"></div>
-  <button autofocus id="topTrack" class="button" value="track" onclick=selectArtistOrTrack(value)>Top Track</button>
-  <button id="topArtist" class="button" value="artist" onclick=selectArtistOrTrack(value)>Top Artist</button>
+  <!-- <div> -->
+  <div id="container" class="row">
+    <nav id="navSidebar" class="col-md-2 d-none d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <button id="topTrack" type="button" autofocus class="btn btn-primary" value="track"
+                onclick=selectArtistOrTrack(value)>Top Track</button>
+              <button id="topArtists" type="button" class="btn btn-primary" value="artist"
+                onclick=selectArtistOrTrack(value)>Top
+                Artist</button>
+            </a>
+          </li>
+          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            <p id="message"></p>
+          </h6>
+          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            <button type="button" class="btn btn-primary" onclick="toggleLyrics()">Show lyrics</button>
+            <p id="lyrics"></p>
+          </h6>
+          <div>
+            <iframe id="playa" src="https://open.spotify.com/embed/track/4Oun2ylbjFKMPTiaSbbCih" width="900" height="80"
+              frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+          </div>
+      </div>
+    </nav>
 
-  <p id="message"></p> 
-  <iframe id="playa" src="https://open.spotify.com/embed/track/4Oun2ylbjFKMPTiaSbbCih" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3">
 
-  <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <div>
+          <div id="vmap"></div>
+        </div>
+
+        <div class="btn-toolbar mb-2 mb-md-0">
+        </div>
+      </div>
+
+      <!-- <h2>Playa</h2> -->
+    </main>
+  </div>
+  <!-- </div> -->
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
   <script type="text/javascript" src="/js/jquery.vmap.js"></script>
   <script type="text/javascript" src="/js/jquery.vmap.world.js" charset="utf-8"></script>
 
   <script type="text/javascript" src="/js/jquery.makeMap.js"></script>
+
+  <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"
+    integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"
+    integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
+    crossorigin="anonymous"></script>
+  <script>$(document).ready(function () { $('body').bootstrapMaterialDesign(); });</script>
 </body>
 
 </html>
