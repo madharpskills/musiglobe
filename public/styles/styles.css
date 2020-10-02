@@ -58,3 +58,7 @@ html,
       background-color: #81BEF7 !important;
       border-right: 1px solid black;
     }
+
+    #lyrics {
+        display: none;
+    }
