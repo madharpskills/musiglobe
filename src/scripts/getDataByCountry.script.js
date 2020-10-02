@@ -24,7 +24,7 @@ const getCountryData = async () => {
     let countriesObj = convertMapToObj(countries)
     let countriesJson = JSON.stringify(countriesObj)
 
-    fs.writeFile('../countries/dataByCountry.json', countriesJson, 'utf8', function (err) {
+    fs.writeFile('./src/countries/dataByCountry.json', countriesJson, 'utf8', function (err) {
         if (err) {
             console.log("An error has occured writing JSON object to file.")
             return console.log(err)
@@ -46,7 +46,10 @@ function convertMapToObj (map) {
 
 const start = async function() {
     let countries = await getCountryData()
-    console.log(countries)
+    // console.log(countries)
+    console.log('done! ' + new Date())
 }
 
 start()
+
+setInterval(start, 1000 * 60 * 60 * 24)
