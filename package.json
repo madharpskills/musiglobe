@@ -12,7 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "apicache": "^1.5.3",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bootstrap-material-design": "^4.1.1",
     "csvtojson": "^2.0.10",
     "dotenv": "^8.2.0",
